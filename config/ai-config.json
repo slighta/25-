@@ -1,0 +1,121 @@
+{
+  "version": "1.0.0",
+  "description": "AI跨学科思维教练配置文件",
+  "disciplines": {
+    "sociology": {
+      "name": "社会学",
+      "keywords": ["社会网络", "群体行为", "社会公平", "文化研究", "社会结构"],
+      "methods": ["问卷调查", "深度访谈", "社会网络分析", "统计分析", "田野调查"],
+      "theories": ["社会选择理论", "社会资本理论", "结构功能主义", "冲突理论"]
+    },
+    "computer_science": {
+      "name": "计算机科学",
+      "keywords": ["算法", "机器学习", "人工智能", "分布式系统", "网络安全"],
+      "methods": ["算法设计", "机器学习", "数据挖掘", "系统架构", "软件工程"],
+      "theories": ["计算复杂性理论", "信息论", "控制论", "人工智能理论"]
+    },
+    "biology": {
+      "name": "生物学",
+      "keywords": ["细胞", "基因", "进化", "生态系统", "生物多样性"],
+      "methods": ["实验研究", "分子生物学", "生态学调查", "生物信息学", "系统生物学"],
+      "theories": ["进化论", "细胞理论", "生态学理论", "系统生物学理论"]
+    },
+    "materials_science": {
+      "name": "材料科学",
+      "keywords": ["纳米材料", "复合材料", "材料性能", "制备工艺", "材料表征"],
+      "methods": ["材料制备", "性能测试", "结构表征", "计算模拟", "实验分析"],
+      "theories": ["材料科学理论", "相变理论", "断裂力学", "材料设计理论"]
+    },
+    "economics": {
+      "name": "经济学",
+      "keywords": ["市场", "价格", "供需", "经济增长", "经济政策"],
+      "methods": ["计量经济学", "博弈论", "实验经济学", "宏观分析", "微观分析"],
+      "theories": ["供需理论", "博弈论", "经济增长理论", "行为经济学理论"]
+    },
+    "psychology": {
+      "name": "心理学",
+      "keywords": ["认知", "行为", "情绪", "学习", "记忆"],
+      "methods": ["实验法", "观察法", "问卷法", "访谈法", "心理测量"],
+      "theories": ["认知理论", "行为主义理论", "人本主义理论", "精神分析理论"]
+    }
+  },
+  "cross_disciplinary_mappings": {
+    "sociology_computer_science": {
+      "concept_mappings": [
+        {
+          "source": "社会网络",
+          "target": "神经网络",
+          "similarity": 0.85,
+          "examples": ["社会连接 → 神经元连接", "群体行为 → 群体智能"]
+        },
+        {
+          "source": "社会公平",
+          "target": "算法公平",
+          "similarity": 0.78,
+          "examples": ["社会选择 → 公平性算法", "偏见检测 → 算法偏见检测"]
+        }
+      ]
+    },
+    "materials_science_biology": {
+      "concept_mappings": [
+        {
+          "source": "纳米材料",
+          "target": "生物结构",
+          "similarity": 0.82,
+          "examples": ["纳米孔 → 细胞膜", "材料优化 → 进化算法"]
+        },
+        {
+          "source": "材料性能",
+          "target": "生物功能",
+          "similarity": 0.75,
+          "examples": ["强度优化 → 生物力学", "热导率 → 生物传热"]
+        }
+      ]
+    },
+    "economics_psychology": {
+      "concept_mappings": [
+        {
+          "source": "市场行为",
+          "target": "认知偏差",
+          "similarity": 0.80,
+          "examples": ["理性选择 → 有限理性", "市场情绪 → 群体心理"]
+        },
+        {
+          "source": "经济决策",
+          "target": "决策心理",
+          "similarity": 0.73,
+          "examples": ["效用最大化 → 心理效用", "风险偏好 → 风险感知"]
+        }
+      ]
+    }
+  },
+  "ai_models": {
+    "paper_analysis": {
+      "model": "gpt-4",
+      "temperature": 0.3,
+      "max_tokens": 1000,
+      "prompt_template": "请分析以下学术论文，提取核心问题、研究方法、主要结论和关键词：{content}"
+    },
+    "insight_generation": {
+      "model": "gpt-4",
+      "temperature": 0.7,
+      "max_tokens": 1500,
+      "prompt_template": "基于源学科{source}和目标学科{target}，为研究主题{topic}生成跨学科创新方案"
+    }
+  },
+  "confidence_thresholds": {
+    "high": 80,
+    "medium": 60,
+    "low": 40
+  },
+  "file_upload": {
+    "max_size": "10MB",
+    "allowed_types": [".pdf", ".doc", ".docx", ".txt"],
+    "upload_dir": "uploads/"
+  },
+  "api": {
+    "base_url": "http://localhost:3000/api",
+    "timeout": 30000,
+    "retry_attempts": 3
+  }
+} 
